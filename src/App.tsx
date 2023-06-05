@@ -1,5 +1,5 @@
 import { useForm } from "@mantine/form";
-import { AppShell, Box, Button, Divider, Group, NumberInput, Text, TextInput } from "@mantine/core";
+import { Anchor, AppShell, Box, Button, Divider, Footer, Group, NumberInput, Text, TextInput } from "@mantine/core";
 import { Fragment } from "react";
 
 function App() {
@@ -37,7 +37,17 @@ function App() {
   }
 
   return (
-    <AppShell>
+    <AppShell
+      footer={<Footer height={60} p="md">
+        <Text align="center" size="sm">
+          Made by <Anchor
+          href="https://github.com/GNimrodG" target="_blank" rel="noopener noreferrer">GNimrodG</Anchor> using <Anchor
+          href="https://mantine.dev/" target="_blank" rel="noopener noreferrer">Mantine</Anchor> and <Anchor
+          href="https://react.dev/" target="_blank" rel="noopener noreferrer">React</Anchor> | <Anchor
+          href="https://github.com/GNimrodG/fuel-type-calculator" target="_blank" rel="noopener noreferrer">Source
+          code</Anchor>
+        </Text>
+      </Footer>}>
       <Box mx="auto" maw={510}>
         <TextInput mx="md" {...form.getInputProps("priceUnit")} label="Price unit" />
         <TextInput mx="md" {...form.getInputProps("distanceUnit")} label="Distance unit" />
